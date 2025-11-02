@@ -12,6 +12,7 @@ export function SocketProvider({ children }) {
   useEffect(() => {
     socketRef.current = io(import.meta.env.VITE_SOCKET_URL, {
       autoConnect: false,
+      withCredentials: true,
     });
 
     socketRef.current.connect();
