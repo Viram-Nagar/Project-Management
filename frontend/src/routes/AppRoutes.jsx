@@ -8,7 +8,7 @@ import Project from "../pages/projects/Project";
 import ProjectInfo from "../pages/projects/ProjectInfo";
 import MainLayout from "../components/layout/MainLayout";
 import MyTasks from "../pages/tasks/MyTasks";
-import LandingPage from "../pages/landing/landingPage";
+import LandingPage from "../pages/landing/LandingPage";
 
 function AppRoutes() {
   return (
