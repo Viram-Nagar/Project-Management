@@ -25,8 +25,8 @@ module.exports.postSignupDetails = async (req, res) => {
 
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    secure: true,
+    sameSite: "none",
     maxAge: 9 * 60 * 60 * 1000,
   });
 
@@ -62,8 +62,8 @@ module.exports.postLoginDetails = async (req, res) => {
 
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
+    secure: true,
+    sameSite: "none",
     maxAge: 9 * 60 * 60 * 1000,
   });
 
@@ -100,8 +100,8 @@ module.exports.fetchUserForAdmin = async (req, res, next) => {
 module.exports.logOut = async (req, res, next) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "strict",
-    secure: process.env.NODE_ENV === "production",
+    sameSite: "none",
+    secure: true,
     path: "/",
   });
   res.json({ message: "Logged out successfully" });

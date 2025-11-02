@@ -54,7 +54,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Server is waiting for request" });
 });
 
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 server.listen(port, () => {
   console.log("Server is listening to port 3000");
 });
