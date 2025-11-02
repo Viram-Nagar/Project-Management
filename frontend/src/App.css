@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@import "tailwindcss";
+/* 
+html {
+  font-size: 50%; 
+} */
+
+/* medium screens (≥ 944px) */
+/* @media (min-width: 59em) {
+  html {
+    font-size: 56.25%; 
+  }
+} */
+
+/* large screens (≥ 1200px) */
+/* @media (min-width: 75em) {
+  html {
+    font-size: 62.5%;
+  }
+} */
+
+@theme {
+  /* CSS HEX */
+  --color-bg: #ffffff;
+  --color-surface: #eeeeee;
+  --color-border: #e5e7eb;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+
+  --color-primary: #4f46e5;
+  --color-primary-accent: #7c3aed;
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* CSS HSL */
+  --color-seasalt: hsla(210, 20%, 98%, 1);
+  --color-white: hsla(0, 0%, 100%, 1);
+  --color-majorelle-blue: hsla(243, 75%, 59%, 1);
+  --color-electric-indigo: hsla(263, 70%, 50%, 1);
+  --color-gamboge: hsla(38, 92%, 50%, 1);
+  --color-imperial-red: hsla(0, 84%, 60%, 1);
+  --color-mint: hsla(160, 84%, 39%, 1);
+  --color-rich-black: hsla(221, 39%, 11%, 1);
+  --color-slate-gray: hsla(220, 9%, 46%, 1);
+  --color-cadet-gray: hsla(218, 11%, 65%, 1);
+
+  --font-poppins: Poppins, sans-serif;
+  --font-inter: Inter, sans-serif;
+}
