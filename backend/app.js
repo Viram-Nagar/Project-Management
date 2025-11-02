@@ -31,16 +31,19 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   })
 );
+app.set("trust proxy", 1); // ✅ fixes CORS & cookies behind Render’s proxy
 
 //  Create HTTP server
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: [process.env.CLIENT_URL], // ✅ allowed frontend origin
+    credentials: true, // ✅ important for cookies
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    credentials: true,
+    transports: ["websocket", "polling"], // ✅ explicitly allow both
   },
+  allowEIO3: true, // ✅ fixes some Render proxies issues
 });
 
 init(io);
