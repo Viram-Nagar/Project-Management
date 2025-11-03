@@ -25,9 +25,9 @@ function Login() {
 
     const response = await loginUser(formData);
 
-    const { user, message } = response.data;
-    if (user) {
-      login(user);
+    const { user, message, token } = response.data;
+    if (user && token) {
+      login(user, token);
       navigate("/projects");
     }
 
