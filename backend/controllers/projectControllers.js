@@ -25,6 +25,7 @@ module.exports.createProject = async (req, res) => {
       name,
       description,
       admin,
+      members: [admin],
     }).save();
 
     const io = getIo();
