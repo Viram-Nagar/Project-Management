@@ -8,27 +8,6 @@ function CreateProject({ closeForm }) {
     admin: JSON.parse(sessionStorage.getItem("user"))._id,
   });
 
-  // const [usersData, setUsersData] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchUsersData = async () => {
-  //     try {
-  //       const res = await getUsers();
-  //       console.log(res.data);
-  //       setUsersData(res.data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-
-  //     // const token = sessionStorage.getItem("token");
-  //     // const res = await axios.get("/api/user", {
-  //     //   headers: { Authorization: `Bearer ${token}` },
-  //     // });
-  //   };
-
-  //   fetchUsersData();
-  // }, []);
-
   function handleInputChange(event) {
     const { name, value, multiple, selectedOptions } = event.target;
     if (multiple) {

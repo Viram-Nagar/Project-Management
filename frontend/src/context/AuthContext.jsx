@@ -20,7 +20,8 @@ export function AuthProvider({ children }) {
     }
   }, []);
 
-  const login = (user) => {
+  const login = (user, token) => {
+    sessionStorage.setItem("token");
     sessionStorage.setItem("user", JSON.stringify(user));
     setUser(user);
 
@@ -32,7 +33,7 @@ export function AuthProvider({ children }) {
 
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("user");
-
+    setToken(null);
     setUser(null);
     delete axios.defaults.headers.common["Authorization"];
   };

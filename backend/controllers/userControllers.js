@@ -23,12 +23,12 @@ module.exports.postSignupDetails = async (req, res) => {
     { expiresIn: "9h" }
   );
 
-  res.cookie("token", token, {
-    httpOnly: true,
-    secure: true,
-    sameSite: "none",
-    maxAge: 9 * 60 * 60 * 1000,
-  });
+  // res.cookie("token", token, {
+  //   httpOnly: true,
+  //   secure: true,
+  //   sameSite: "none",
+  //   maxAge: 9 * 60 * 60 * 1000,
+  // });
 
   return res.json({ user: { name, email, role, _id: newUser._id }, token });
 };
@@ -60,15 +60,16 @@ module.exports.postLoginDetails = async (req, res) => {
     { expiresIn: "9h" }
   );
 
-  res.cookie("token", token, {
-    httpOnly: true,
-    secure: true,
-    sameSite: "none",
-    maxAge: 9 * 60 * 60 * 1000,
-  });
+  // res.cookie("token", token, {
+  //   httpOnly: true,
+  //   secure: true,
+  //   sameSite: "none",
+  //   maxAge: 9 * 60 * 60 * 1000,
+  // });
 
   return res.json({
     user: { name: user.name, _id: user._id, role: user.role, email },
+    token,
   });
 };
 
@@ -98,11 +99,11 @@ module.exports.fetchUserForAdmin = async (req, res, next) => {
 };
 
 module.exports.logOut = async (req, res, next) => {
-  res.clearCookie("token", {
-    httpOnly: true,
-    sameSite: "none",
-    secure: true,
-    path: "/",
-  });
+  // res.clearCookie("token", {
+  //   httpOnly: true,
+  //   sameSite: "none",
+  //   secure: true,
+  //   path: "/",
+  // });
   res.json({ message: "Logged out successfully" });
 };
