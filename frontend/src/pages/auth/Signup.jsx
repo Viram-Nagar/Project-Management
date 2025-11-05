@@ -26,7 +26,7 @@ function Signup() {
     const response = await signupUser(formData);
     const { user } = response.data;
     login(user);
-    navigate("/projects");
+    navigate("/login");
 
     console.log(response);
   }
